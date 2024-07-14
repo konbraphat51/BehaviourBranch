@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics.PythonConnection
 {
     /// <summary>
     /// Connecting to Python
@@ -26,26 +26,6 @@ namespace BehaviourBranch.Logistics
     [RequireComponent(typeof(DataDecoder))]
     public class PythonConnector : MonoBehaviour
     {
-        /// <summary>
-        /// Returns singleton instance
-        /// </summary>
-        public static PythonConnector instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<PythonConnector>();
-
-                    if (_instance == null)
-                    {
-                        Debug.LogError("PythonConnector not found");
-                    }
-                }
-                return _instance;
-            }
-        }
-
         /// <summary>
         /// Returns true if currently connected to Python server
         /// </summary>

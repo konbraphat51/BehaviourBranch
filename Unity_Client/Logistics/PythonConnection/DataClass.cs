@@ -6,7 +6,7 @@ License: Boost Software License (BSL1.0)
 
 using System;
 
-namespace BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics.PythonConnection
 {
     /// <summary>
     /// Data for receiving data from Python server

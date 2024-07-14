@@ -11,7 +11,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics.PythonConnection
 {
     public abstract class DataDecoder : MonoBehaviour
     {
