@@ -1,7 +1,7 @@
 using System;
-using Logistics.PythonConnection;
+using BehaviourBranch.Logistics.PythonConnection;
 
-namespace AI.BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics
 {
     [Serializable]
     public class NodeData : DataClass

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AI.BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics
 {
     /// <summary>
     /// Connect with Python and receive new BehaviourBranch

@@ -244,7 +244,7 @@ namespace BehaviourBranch.Logistics.PythonConnection
         /// This will decode the data and call the registered callback
         /// </summary>
         /// <param name="data"></param>
-        protected virtual void OnDataReceived(string data)
+        public virtual void OnDataReceived(string data)
         {
             //separate data_type and data JSON
             Message[] messages = Separate(data);

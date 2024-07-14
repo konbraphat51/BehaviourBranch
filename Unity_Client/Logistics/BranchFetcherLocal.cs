@@ -1,9 +1,9 @@
 using System;
+using BehaviourBranch.Logistics.PythonConnection;
 using UnityEngine;
-using Logistics.PythonConnection;
 using UnityEngine.Events;
 
-namespace AI.BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics
 {
     /// <summary>
     /// Connect with local Python and receive new BehaviourBranch
