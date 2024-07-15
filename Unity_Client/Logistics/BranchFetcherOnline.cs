@@ -25,7 +25,12 @@ namespace BehaviourBranch.Logistics
                 { "Content-Type", "application/json" }
             };
 
-            Request request = new Request() { command = command, commandId = commandId };
+            Request request = new Request()
+            {
+                command = command,
+                commandId = commandId,
+                promptName = promptName
+            };
 
             StartCoroutine(
                 connectionModule.Post<Request, Response>(
@@ -51,6 +56,7 @@ namespace BehaviourBranch.Logistics
             public string command;
             public int commandId = -1;
             public string battleId = "none";
+            public string promptName = "";
         }
 
         [Serializable]

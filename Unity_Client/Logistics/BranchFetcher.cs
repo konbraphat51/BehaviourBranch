@@ -8,6 +8,9 @@ namespace BehaviourBranch.Logistics
     /// </summary>
     public abstract class BranchFetcher : MonoBehaviour
     {
+        [SerializeField]
+        protected string promptName = "";
+
         public BranchFetcher instance
         {
             get { return this; }

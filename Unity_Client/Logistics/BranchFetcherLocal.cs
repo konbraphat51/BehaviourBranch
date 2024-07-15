@@ -27,7 +27,12 @@ namespace BehaviourBranch.Logistics
 
         public override void SendCommand(string command, int commandId = -1)
         {
-            Command instance = new Command() { command = command, commandId = commandId };
+            Command instance = new Command()
+            {
+                command = command,
+                commandId = commandId,
+                promptName = promptName
+            };
 
             pythonConnector.Send("command", instance);
         }
@@ -54,6 +59,7 @@ namespace BehaviourBranch.Logistics
         {
             public string command;
             public int commandId = -1;
+            public string promptName = "";
         }
     }
 }
