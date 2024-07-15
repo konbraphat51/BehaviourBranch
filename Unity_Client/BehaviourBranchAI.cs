@@ -290,7 +290,7 @@ namespace BehaviourBranch
         private BehaviourRunner SetNewActionBehaviour(NodeAction nodeAction)
         {
             //...create a new one
-            behaviourRunnerActive = BehaviourRunner.CreateInstance(agentInterface, nodeAction);
+            behaviourRunnerActive = agentInterface.CreateInstance(agentInterface, nodeAction);
             nodeActionActive = nodeAction;
             return behaviourRunnerActive;
         }
