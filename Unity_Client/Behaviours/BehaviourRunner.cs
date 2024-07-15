@@ -1,5 +1,4 @@
 using System;
-using Simulation.Objects.Fighters;
 using UnityEngine;
 
 namespace BehaviourBranch.Behaviours

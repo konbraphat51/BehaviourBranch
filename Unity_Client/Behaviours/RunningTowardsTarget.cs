@@ -1,6 +1,4 @@
 using BehaviourBranch.Variables;
-using Simulation;
-using Simulation.Objects.Fighters;
 
 namespace BehaviourBranch.Behaviours
 {

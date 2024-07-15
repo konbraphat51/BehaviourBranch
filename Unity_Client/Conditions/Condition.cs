@@ -1,6 +1,5 @@
 using System;
 using BehaviourBranch.Variables;
-using Simulation.Objects.Fighters;
 using UnityEngine;
 
 namespace BehaviourBranch.Conditions

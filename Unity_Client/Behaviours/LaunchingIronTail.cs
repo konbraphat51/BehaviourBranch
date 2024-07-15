@@ -1,6 +1,3 @@
-using Simulation.Objects.Fighters;
-using Simulation.Objects.Fighters.Actions;
-
 namespace BehaviourBranch.Behaviours
 {
     public class LaunchingIronTail : BehaviourRunner
