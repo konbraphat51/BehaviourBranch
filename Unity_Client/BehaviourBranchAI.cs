@@ -19,10 +19,6 @@ namespace BehaviourBranch
         private Node nodeCurrent;
         private NodeAction nodeActionActive;
 
-        private List<int> idsRequired = new List<int>();
-        private int idCurrent = 0;
-        private bool isRequiring => idsRequired.Count > 0;
-
         private BehaviourBranchAgent agentInterface;
 
         [SerializeField]
