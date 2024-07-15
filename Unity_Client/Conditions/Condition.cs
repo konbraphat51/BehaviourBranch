@@ -14,14 +14,12 @@ namespace BehaviourBranch.Conditions
     {
         protected const float EQUAL_THRESHOLD = 0.5f;
 
-        protected Fighter fighter;
-        protected FighterWatcher fighterWatcher;
+        protected BehaviourBranchAgent agentInterface;
         protected NodeCondition nodeCondition;
 
-        public Condition(Fighter fighter, NodeCondition nodeCondition)
+        public Condition(BehaviourBranchAgent agentInterface, NodeCondition nodeCondition)
         {
-            this.fighter = fighter;
-            this.fighterWatcher = fighter.GetComponent<FighterWatcher>();
+            this.agentInterface = agentInterface;
             this.nodeCondition = nodeCondition;
         }
 
@@ -30,16 +28,16 @@ namespace BehaviourBranch.Conditions
             switch (nodeCondition.conditionName)
             {
                 case "<":
-                    return Variable.ConvertVariable(nodeCondition.args[0], fighterWatcher)
-                        < Variable.ConvertVariable(nodeCondition.args[1], fighterWatcher);
+                    return agentInterface.ConvertVariable(nodeCondition.args[0])
+                        < agentInterface.ConvertVariable(nodeCondition.args[1]);
                 case ">":
-                    return Variable.ConvertVariable(nodeCondition.args[0], fighterWatcher)
-                        > Variable.ConvertVariable(nodeCondition.args[1], fighterWatcher);
+                    return agentInterface.ConvertVariable(nodeCondition.args[0])
+                        > agentInterface.ConvertVariable(nodeCondition.args[1]);
                 case "==":
                     //approximate equality
                     float difference =
-                        Variable.ConvertVariable(nodeCondition.args[0], fighterWatcher)
-                        - Variable.ConvertVariable(nodeCondition.args[1], fighterWatcher);
+                        agentInterface.ConvertVariable(nodeCondition.args[0])
+                        - agentInterface.ConvertVariable(nodeCondition.args[1]);
                     return Math.Abs(difference) < EQUAL_THRESHOLD;
                 default:
                     Debug.Log("Unknown condition: " + nodeCondition.conditionName);

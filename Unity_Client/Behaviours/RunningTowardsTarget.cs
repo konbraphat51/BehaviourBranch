@@ -10,7 +10,7 @@ namespace BehaviourBranch.Behaviours
 
         private float angle;
 
-        public RunningTowardsTarget(Fighter fighter, NodeAction action)
+        public RunningTowardsTarget(BehaviourBranchAgent fighter, NodeAction action)
             : base(fighter, action)
         {
             satisfied = false;
@@ -18,10 +18,7 @@ namespace BehaviourBranch.Behaviours
 
         protected override void Start()
         {
-            angle = Variable.ConvertVariable(
-                nodeAction.args[0],
-                fighter.GetComponent<FighterWatcher>()
-            );
+            angle = Variable.ConvertVariable(nodeAction.args[0]);
 
             Timer timer = new Timer(REQUIRED_TIME, OnRequiredTimeFinished);
         }
