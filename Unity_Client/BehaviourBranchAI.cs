@@ -277,7 +277,7 @@ namespace BehaviourBranch
                 NodeControl nodeControl = nodeCurrent as NodeControl;
 
                 //first execution
-                nodeControl.control.ExecuteFirst(this);
+                nodeControl.control.ExecuteFirst(this, agentInterface);
             }
             else if (nodeCurrent is NodeAction)
             {

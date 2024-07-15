@@ -14,10 +14,10 @@ namespace BehaviourBranch.Controls
             return new NodeControl(name);
         }
 
-        public override void ExecuteFirst(BehaviourBranchAI behaviourBranchAI)
+        public override void ExecuteFirst(BehaviourBranchAI ai, BehaviourBranchAgent agentInterface)
         {
             //stop repeating
-            behaviourBranchAI.StopRepeating();
+            ai.StopRepeating();
         }
 
         public override void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI) { }
