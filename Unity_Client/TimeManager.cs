@@ -3,10 +3,24 @@ using UnityEngine;
 
 namespace BehaviourBranch
 {
+    /// <summary>
+    /// Stop the time when needed
+    /// </summary>
     public class TimeManager
     {
+        /// <summary>
+        /// Singleton instance
+        /// </summary>
         public static TimeManager instance = new TimeManager();
 
+        /// <summary>
+        /// Is currently stopping
+        /// </summary>
+        public bool isStopping => stoppers.Count > 0;
+
+        /// <summary>
+        /// IDs that now stopping the time
+        /// </summary>
         protected List<int> stoppers = new List<int>();
 
         /// <summary>
