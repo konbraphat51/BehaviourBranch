@@ -20,7 +20,7 @@ class BehaviourController:
         # modules
         self.thinker = BehaviourThinker(config)
 
-    def command(self, command: str) -> list[dict]:
+    def command(self, command: str, prompt_name: str) -> list[dict]:
         """Execute the command"""
 
         if self.config.verbose >= 2:
@@ -31,7 +31,7 @@ class BehaviourController:
             time_start = time()
 
         # make new branch
-        branch = self.thinker.think(command)
+        branch = self.thinker.think(command, prompt_name)
 
         # none detected
         if (branch == None) or (branch.root_node is None):

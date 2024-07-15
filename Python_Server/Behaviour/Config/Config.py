@@ -23,14 +23,10 @@ class Config:
         self.whisper_device = "cuda"
 
         # behaviour
-        if self.language_speech == "ja":
-            self.prompt_path = (
-                Path(__file__).parent / "CodePrompt" / "CodePromptJP.txt"
-            ).as_posix()
-        elif self.language_speech == "en":
-            self.prompt_path = (
-                Path(__file__).parent / "CodePrompt" / "CodePromptEN.txt"
-            ).as_posix()
+        self.prompt_path = {
+            "ja": Path(__file__).parent / "CodePrompt" / "CodePromptJP.txt",
+            "en": Path(__file__).parent / "CodePrompt" / "CodePromptEN.txt",
+        }
         self.prompt_alias = "[PROMPT]"
 
         # tokens

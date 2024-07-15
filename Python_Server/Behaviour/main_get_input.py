@@ -26,7 +26,7 @@ def on_received(format_name: str, data) -> None:
     if "commandId" in data:
         command_id = data["commandId"]
         
-    on_speech_recognized(data["command"], command_id=command_id)
+    on_speech_recognized(data["command"], data["promptName"], command_id=command_id)
 
 
 verboser.print("connecting...", 1)
@@ -34,11 +34,11 @@ connector = Connector(on_received=on_received).singleton
 verboser.print("connected", 1)
 
 
-def on_speech_recognized(transcription: str, command_id:int = -1):
+def on_speech_recognized(transcription: str, prompt_name: str, command_id:int = -1):
     verboser.print(f"speech recognized: {transcription}", 2)
 
     # to behaviour json
-    behaviour_json = behaviour_controller.command(transcription)
+    behaviour_json = behaviour_controller.command(transcription, prompt_name)
 
     # send this to unity
     verboser.print("sending...", 1)

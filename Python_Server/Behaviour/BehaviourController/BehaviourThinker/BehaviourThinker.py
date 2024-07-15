@@ -17,11 +17,10 @@ class BehaviourThinker:
     def __init__(self, config: Config) -> None:
         self.config = config
 
-        self.code_prompt_template = self._read_code_prompt_template()
-
-    def think(self, prompt_text: str) -> BehaviourBranch:
+    def think(self, prompt_text: str, prompt_name: str) -> BehaviourBranch:
         # think
-        prompt = self._make_prompt(prompt_text)
+        self.code_prompt_template = self._read_code_prompt_template(prompt_name)
+        prompt = self._make_prompt(prompt_text, prompt_name)
 
         # fetch from LLM
         tried = 0
@@ -56,9 +55,9 @@ class BehaviourThinker:
                 # ...return this branch
                 return branch
 
-    def _read_code_prompt_template(self) -> str:
+    def _read_code_prompt_template(self, prompt_name: str) -> str:
         # template file is in the same directory as this .py file
-        template_path = self.config.prompt_path
+        template_path = self.config.prompt_path[prompt_name]
         with open(template_path, "r", encoding="utf8") as f:
             return f.read()
 
