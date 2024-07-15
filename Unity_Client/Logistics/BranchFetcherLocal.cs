@@ -9,6 +9,7 @@ namespace BehaviourBranch.Logistics
     /// Connect with local Python and receive new BehaviourBranch
     /// </summary>
     [RequireComponent(typeof(PythonConnector))]
+    [RequireComponent(typeof(BranchDecoder))]
     public class BranchFetcherLocal : BranchFetcher
     {
         protected PythonConnector pythonConnector;
