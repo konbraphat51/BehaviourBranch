@@ -1,9 +1,9 @@
 using System;
-using UnityEngine;
-using AI.BehaviourBranch.Variables;
+using BehaviourBranch.Variables;
 using Simulation.Objects.Fighters;
+using UnityEngine;
 
-namespace AI.BehaviourBranch.Conditions
+namespace BehaviourBranch.Conditions
 {
     /// <summary>
     /// Base class for all conditions.

@@ -1,8 +1,8 @@
+using BehaviourBranch.Variables;
 using Simulation;
 using Simulation.Objects.Fighters;
-using AI.BehaviourBranch.Variables;
 
-namespace AI.BehaviourBranch.Behaviours
+namespace BehaviourBranch.Behaviours
 {
     public class RunningTowardsTarget : BehaviourRunner
     {

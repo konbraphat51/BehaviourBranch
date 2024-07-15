@@ -1,24 +1,26 @@
 using System;
 using UnityEngine;
-using Simulation.Objects.Fighters;
 
-namespace AI.BehaviourBranch.Variables
+namespace BehaviourBranch.Variables
 {
     public abstract class Variable
     {
         public const float TRUE = 100f;
         public const float FALSE = -100f;
 
-        protected FighterWatcher fighterWatcher;
+        protected BehaviourBranchAgent fighterWatcher;
 
-        public Variable(FighterWatcher fighterWatcher)
+        public Variable(BehaviourBranchAgent fighterWatcher)
         {
             this.fighterWatcher = fighterWatcher;
         }
 
         public abstract float Get();
 
-        public static float ConvertVariable(string variableName, FighterWatcher fighterWatcher)
+        public static float ConvertVariable(
+            string variableName,
+            BehaviourBranchAgent fighterWatcher
+        )
         {
             // if the variable is a float...
             if (float.TryParse(variableName, out float result))

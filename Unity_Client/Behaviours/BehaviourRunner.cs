@@ -1,8 +1,8 @@
 using System;
-using UnityEngine;
 using Simulation.Objects.Fighters;
+using UnityEngine;
 
-namespace AI.BehaviourBranch.Behaviours
+namespace BehaviourBranch.Behaviours
 {
     /// <summary>
     /// Base class for all behaviours.

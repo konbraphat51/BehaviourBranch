@@ -1,7 +1,7 @@
-using AI.BehaviourBranch.Conditions;
+using BehaviourBranch.Conditions;
 using Simulation.Objects.Fighters;
 
-namespace AI.BehaviourBranch
+namespace BehaviourBranch
 {
     public class NodeCondition : Node
     {

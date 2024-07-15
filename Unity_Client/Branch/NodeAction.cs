@@ -1,4 +1,4 @@
-namespace AI.BehaviourBranch
+namespace BehaviourBranch
 {
     public class NodeAction : Node
     {

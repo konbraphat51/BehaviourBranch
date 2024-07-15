@@ -1,8 +1,8 @@
 using System;
+using BehaviourBranch.Logistics;
 using UnityEngine;
-using AI.BehaviourBranch.Logistics;
 
-namespace AI.BehaviourBranch
+namespace BehaviourBranch
 {
     public abstract class Node
     {

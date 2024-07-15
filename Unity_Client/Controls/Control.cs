@@ -1,6 +1,6 @@
 using System;
 
-namespace AI.BehaviourBranch.Controls
+namespace BehaviourBranch.Controls
 {
     public abstract class Control
     {

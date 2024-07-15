@@ -1,6 +1,6 @@
-using AI.BehaviourBranch.Variables;
+using BehaviourBranch.Variables;
 
-namespace AI.BehaviourBranch.Controls
+namespace BehaviourBranch.Controls
 {
     public class Repeat : Control
     {
