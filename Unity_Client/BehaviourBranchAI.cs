@@ -16,11 +16,11 @@ namespace BehaviourBranch
     public class BehaviourBranchAI : MonoBehaviour
     {
         //structure
-        protected Node nodeCurrent;
-        protected NodeAction nodeActionActive;
+        private Node nodeCurrent;
+        private NodeAction nodeActionActive;
 
         //action
-        protected BehaviourRunner behaviourRunnerActive;
+        private BehaviourRunner behaviourRunnerActive;
         public bool actionSatisfied
         {
             get
@@ -38,15 +38,15 @@ namespace BehaviourBranch
         }
 
         //repitition
-        protected bool flagRepeating = false;
-        protected Node repeatingStart;
-        protected int repititionLeft = 0;
+        private bool flagRepeating = false;
+        private Node repeatingStart;
+        private int repititionLeft = 0;
 
         //node stopwatch
-        public float stopwatch { get; protected set; } = 0f;
+        public float stopwatch { get; private set; } = 0f;
 
         [SerializeField]
-        protected bool shouldStopWhileCommanding = true;
+        private bool shouldStopWhileCommanding = true;
 
         private void Start()
         {
@@ -60,7 +60,7 @@ namespace BehaviourBranch
             UpdateStopwatch();
         }
 
-        public override void Command(string command)
+        public void Command(string command)
         {
             Debug.Log("AI Controller received command: " + command);
 
