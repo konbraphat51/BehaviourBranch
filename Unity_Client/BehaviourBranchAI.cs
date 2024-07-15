@@ -23,6 +23,8 @@ namespace BehaviourBranch
         private int idCurrent = 0;
         private bool isRequiring => idsRequired.Count > 0;
 
+        private BehaviourBranchAgent agentInterface;
+
         //action
         private BehaviourRunner behaviourRunnerActive;
         public bool actionSatisfied
@@ -246,7 +248,7 @@ namespace BehaviourBranch
                     ChangeCurrentNode(nodeCondition);
 
                     //...if the condition is met AND transmittable...
-                    if (nodeCondition.Check(fighterTarget) && actionSatisfied)
+                    if (nodeCondition.Check(agentInterface) && actionSatisfied)
                     {
                         //...to the true node
                         if (nodeCondition.nodeTrue != null) //null guard
@@ -288,7 +290,7 @@ namespace BehaviourBranch
         private BehaviourRunner SetNewActionBehaviour(NodeAction nodeAction)
         {
             //...create a new one
-            behaviourRunnerActive = BehaviourRunner.CreateInstance(fighterTarget, nodeAction);
+            behaviourRunnerActive = BehaviourRunner.CreateInstance(agentInterface, nodeAction);
             nodeActionActive = nodeAction;
             return behaviourRunnerActive;
         }
@@ -299,7 +301,7 @@ namespace BehaviourBranch
             foreach (NodeCondition nodeCondition in GetActiveConditions(currentNode))
             {
                 //if the condition is met...
-                if (nodeCondition.Check(fighterTarget))
+                if (nodeCondition.Check(agentInterface))
                 {
                     //skip if no true node
                     if (nodeCondition.nodeTrue == null)
