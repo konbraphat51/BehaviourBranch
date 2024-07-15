@@ -5,6 +5,8 @@ namespace BehaviourBranch
 {
     public class TimeManager
     {
+        public static TimeManager instance = new TimeManager();
+
         protected List<int> stoppers = new List<int>();
 
         /// <summary>
