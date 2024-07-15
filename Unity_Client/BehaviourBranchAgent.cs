@@ -18,11 +18,11 @@ namespace BehaviourBranch
             }
             else if (variableName == "True")
             {
-                return 100f;
+                return Variable.TRUE;
             }
             else if (variableName == "False")
             {
-                return -100f;
+                return Variable.FALSE;
             }
 
             return ConvertVariableNode(variableName).Get();
