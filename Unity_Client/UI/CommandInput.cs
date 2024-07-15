@@ -36,7 +36,7 @@ namespace BehaviourBranch.UI
         private void StartCommanding()
         {
             //stop time
-            stopperId = TimeManager.Instance.AddStopper();
+            stopperId = TimeManager.instance.AddStopper();
 
             //forcus on inputfield
             inputField.interactable = true;
@@ -46,7 +46,7 @@ namespace BehaviourBranch.UI
         public void Command()
         {
             //revert time
-            TimeManager.Instance.RemoveStopper(stopperId);
+            TimeManager.instance.RemoveStopper(stopperId);
 
             //get command
             string command = inputField.text;
