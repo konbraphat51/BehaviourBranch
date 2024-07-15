@@ -15,9 +15,13 @@ namespace BehaviourBranch
     [RequireComponent(typeof(BranchFetcher))]
     public class BehaviourBranchAI : MonoBehaviour
     {
-        //structure
+        //basics
         private Node nodeCurrent;
         private NodeAction nodeActionActive;
+
+        private List<int> idsRequired = new List<int>();
+        private int idCurrent = 0;
+        private bool isRequiring => idsRequired.Count > 0;
 
         //action
         private BehaviourRunner behaviourRunnerActive;
@@ -45,9 +49,6 @@ namespace BehaviourBranch
         //node stopwatch
         public float stopwatch { get; private set; } = 0f;
 
-        [SerializeField]
-        private bool shouldStopWhileCommanding = true;
-
         private void Start()
         {
             PrepareConnection();
@@ -64,12 +65,9 @@ namespace BehaviourBranch
         {
             Debug.Log("AI Controller received command: " + command);
 
-            int commandId = -1;
-            if (shouldStopWhileCommanding)
-            {
-                //using TimeManager as command ID
-                commandId = TimeManager.Instance.AddStopper();
-            }
+            int commandId = idCurrent;
+            idsRequired.Add(commandId);
+            idCurrent++;
 
             BranchFetcher connector = GetComponent<BranchFetcher>();
             connector.SendCommand(command, commandId);
@@ -419,11 +417,7 @@ namespace BehaviourBranch
 
         private void ReceiveNewBranch(BranchData branchData)
         {
-            //remove stopper
-            if (shouldStopWhileCommanding)
-            {
-                TimeManager.Instance.RemoveStopper(branchData.commandId);
-            }
+            idsRequired.Remove(branchData.commandId);
 
             //null guard
             if (branchData.nodes == null)
