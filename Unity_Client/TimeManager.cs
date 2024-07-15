@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BehaviourBranch
 {
-    public class TimeManager : SingletonMonoBehaviour<TimeManager>
+    public class TimeManager
     {
         protected List<int> stoppers = new List<int>();
 
