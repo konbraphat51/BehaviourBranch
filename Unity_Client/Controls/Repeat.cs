@@ -26,13 +26,16 @@ namespace BehaviourBranch.Controls
             return false;
         }
 
-        public override void ExecuteFirst(BehaviourBranchAI ai, BehaviourBranchAgent agentInterface)
+        public override void ExecuteFirst(
+            BehaviourBranchController ai,
+            BehaviourBranchAgent agentInterface
+        )
         {
             int repitition = (int)agentInterface.ConvertVariable(nodeThis.args[0]);
 
             ai.StartRepeating(nodeThis.nodeNext, repitition);
         }
 
-        public override void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI) { }
+        public override void ExecuteUpdate(BehaviourBranchController behaviourBranchAI) { }
     }
 }

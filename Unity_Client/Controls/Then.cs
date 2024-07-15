@@ -36,12 +36,15 @@ namespace BehaviourBranch.Controls
             }
         }
 
-        public override void ExecuteFirst(BehaviourBranchAI ai, BehaviourBranchAgent agentInterface)
+        public override void ExecuteFirst(
+            BehaviourBranchController ai,
+            BehaviourBranchAgent agentInterface
+        )
         {
             //do nothing
         }
 
-        public override void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI)
+        public override void ExecuteUpdate(BehaviourBranchController behaviourBranchAI)
         {
             //do nothing
         }

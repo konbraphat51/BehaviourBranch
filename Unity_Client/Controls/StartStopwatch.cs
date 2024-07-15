@@ -5,12 +5,15 @@ namespace BehaviourBranch.Controls
         public StartStopwatch(NodeControl nodeControl)
             : base(nodeControl) { }
 
-        public override void ExecuteFirst(BehaviourBranchAI ai, BehaviourBranchAgent agentInterface)
+        public override void ExecuteFirst(
+            BehaviourBranchController ai,
+            BehaviourBranchAgent agentInterface
+        )
         {
             //stop repeating
             ai.StartTime();
         }
 
-        public override void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI) { }
+        public override void ExecuteUpdate(BehaviourBranchController behaviourBranchAI) { }
     }
 }

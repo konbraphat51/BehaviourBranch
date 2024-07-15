@@ -29,9 +29,9 @@ namespace BehaviourBranch.Controls
         }
 
         public abstract void ExecuteFirst(
-            BehaviourBranchAI ai,
+            BehaviourBranchController ai,
             BehaviourBranchAgent agentInterface
         );
-        public abstract void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI);
+        public abstract void ExecuteUpdate(BehaviourBranchController behaviourBranchAI);
     }
 }
