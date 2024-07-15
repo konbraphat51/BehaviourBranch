@@ -2,11 +2,11 @@ using BehaviourBranch.Behaviours;
 
 namespace BehaviourBranch
 {
-    public interface BehaviourBranchAgent
+    public abstract class BehaviourBranchAgent
     {
-        public float ConvertVariable(string variableName);
+        public abstract float ConvertVariable(string variableName);
 
-        public BehaviourRunner CreateInstance(
+        public abstract BehaviourRunner CreateInstance(
             BehaviourBranchAgent agentInterface,
             NodeAction nodeAction
         );
