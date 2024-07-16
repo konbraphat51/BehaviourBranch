@@ -1,9 +1,10 @@
 using BehaviourBranch.Behaviours;
 using BehaviourBranch.Variables;
+using UnityEngine;
 
 namespace BehaviourBranch
 {
-    public abstract class BehaviourBranchAgent
+    public abstract class BehaviourBranchAgent : MonoBehaviour
     {
         /// <summary>
         /// Implement this method to convert variable name to Variable Node
