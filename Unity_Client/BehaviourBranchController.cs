@@ -52,6 +52,7 @@ namespace BehaviourBranch
 
         private void Start()
         {
+            agentInterface = GetComponent<BehaviourBranchAgent>();
             PrepareConnection();
         }
 
