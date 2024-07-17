@@ -28,7 +28,7 @@ class LLMFetcher:
         self.verboser.start_timer()
 
         body = {
-            "model": "codellama/CodeLlama-70b-hf",
+            "model": "codellama/CodeLlama-70b-Python-hf",
             "prompt": prompt_sending,
             "max_tokens": 120,
             "temperature": 0.1,
