@@ -20,7 +20,7 @@ class BehaviourThinker:
     def think(self, prompt_text: str, prompt_name: str) -> BehaviourBranch:
         # think
         self.code_prompt_template = self._read_code_prompt_template(prompt_name)
-        prompt = self._make_prompt(prompt_text, prompt_name)
+        prompt = self._make_prompt(prompt_text)
 
         # fetch from LLM
         tried = 0
