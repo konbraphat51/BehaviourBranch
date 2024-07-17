@@ -7,6 +7,6 @@ config.logging = True
 
 thinker = BehaviourController(config)
 
-result = thinker.command("右に行って", "fetching")
+result = thinker.command("go right", "fetching_en")
 
 print(result)
