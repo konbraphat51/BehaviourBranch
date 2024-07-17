@@ -1,0 +1,87 @@
+from BehaviourTree import add_action_behaviour, add_condition_behaviour, add_control_behaviour
+actions = [
+    "MoveX",  #horizontal
+	"MoveY",  #vertical
+    "GetNearFoodFood",
+	"Stop",
+]
+variables = [
+    "true",
+    "false",
+    "justGotFood"
+]
+conditions = [">", "<", "=="]
+controls = [
+    "Then",
+    "Repeat",
+    "QuitRepeating", 
+]
+
+#go 3 block up
+action0 = [
+    add_action_behaviour("MoveY", 3)
+]
+
+#go 2 block left
+action1 = [
+    add_action_behaviour("MoveX", -2)
+]
+
+#go 1 block right and 4 block down
+action2 = [
+    add_action_behaviour("MoveX", 1),
+    add_action_behaviour("MoveY", -4)
+]
+
+#get the food nearby
+action3 = [
+    add_action_behaviour("GetNearFood"),
+]
+
+#go left as long as you can
+action4 = [
+    add_action_behaviour("MoveX", -100),
+]
+
+#go right to get an apple
+action5 = [
+    add_action_behaviour("MoveX", 100),
+    #if got an apple, stop
+	[
+		add_condition_behaviour("justGotFood", "==", "true"),
+		add_action_behaviour("Stop")
+	]
+]
+
+#if you got an apple left, go 4 block up
+action6 = [
+    add_action_behaviour("MoveX", -100),
+    [
+        add_condition_behaviour("justGotFood", "==", "true"),
+        add_action_behaviour("MoveY", 4)
+    ]
+]
+
+#after that, get the near food
+action7 = [
+	add_control_behaviour("Then"),
+
+	add_action_behaviour("justGotFood")
+]
+
+#Get 2 apple nearby
+action8 = [
+    add_control_behaviour("Repeat", 2),
+
+    add_action_behaviour("GetNearFood")
+]
+
+#please get all the food nearby
+action9 = [
+    add_control_behaviour("Repeat", -1),
+
+    add_action_behaviour("GetNearFood")
+]
+
+#[PROMPT]
+action10 = [
