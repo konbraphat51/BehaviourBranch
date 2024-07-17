@@ -1,5 +1,5 @@
 pyaudio
 pynput
 faster-whisper
-git+https://github.com/konbraphat51/UnityPythonConnectionModules.git#egg=UnityConnector&subdirectory=PythonSocket
 requests
+git+https://github.com/konbraphat51/UnityPythonConnectionModules.git#egg=UnityConnector&subdirectory=PythonSocket

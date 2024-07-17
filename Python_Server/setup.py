@@ -9,6 +9,5 @@ def requirements():
 setup(
     name="BehaviourBranchAi",
     version="0.1",
-    install_requires=requirements(),
     packages=find_packages(exclude=["Test"]),
 )
