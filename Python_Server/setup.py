@@ -7,7 +7,7 @@ def requirements():
 
 
 setup(
-    name="PokeAIBehaviour",
+    name="BehaviourBranchAi",
     version="0.1",
     install_requires=requirements(),
     packages=find_packages(exclude=["Test"]),
