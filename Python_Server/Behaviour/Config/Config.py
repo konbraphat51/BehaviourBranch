@@ -27,7 +27,7 @@ class Config:
             "p_ja": Path(__file__).parent / "CodePrompt" / "CodePromptJP.txt",
             "p_en": Path(__file__).parent / "CodePrompt" / "CodePromptEN.txt",
             "fetching_en": Path(__file__).parent / "CodePrompt" / "fetching_prompt_en.txt",
-            "fetching_ja": Path(__file__).parent / "CodePrompt" / "fetching_prompt_ja.txt",
+            "fetching_jp": Path(__file__).parent / "CodePrompt" / "fetching_prompt_jp.txt",
         }
         self.prompt_alias = "[PROMPT]"
 
