@@ -18,11 +18,24 @@ namespace BehaviourBranch.Logistics
 
         protected UnityEvent<BranchData> newBranchEvent = new UnityEvent<BranchData>();
 
+        protected virtual void Awake()
+        {
+            PrepareConnection();
+        }
+
         public abstract void SendCommand(string command, int commandId = -1);
 
         public virtual void RegisterAction(UnityAction<BranchData> action)
         {
             newBranchEvent.AddListener(action);
+        }
+
+        // AI connection
+        private void PrepareConnection()
+        {
+            BranchFetcher fetcher = GetComponent<BranchFetcher>();
+            fetcher.RegisterAction(ReceiveNewBranch);
+            Debug.Log("Connection prepared");
         }
     }
 }

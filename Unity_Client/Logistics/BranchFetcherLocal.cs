@@ -14,7 +14,7 @@ namespace BehaviourBranch.Logistics
     {
         protected PythonConnector pythonConnector;
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
             pythonConnector = GetComponent<PythonConnector>();
 

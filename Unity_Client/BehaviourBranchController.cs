@@ -53,7 +53,6 @@ namespace BehaviourBranch
         private void Awake()
         {
             agentInterface = GetComponent<BehaviourBranchAgent>();
-            PrepareConnection();
         }
 
         private void Update()
@@ -410,14 +409,6 @@ namespace BehaviourBranch
         private void UpdateStopwatch()
         {
             stopwatch += Time.deltaTime;
-        }
-
-        // AI connection
-        private void PrepareConnection()
-        {
-            BranchFetcher fetcher = GetComponent<BranchFetcher>();
-            fetcher.RegisterAction(ReceiveNewBranch);
-            Debug.Log("Connection prepared");
         }
 
         private void ReceiveNewBranch(BranchData branchData)
