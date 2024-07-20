@@ -10,8 +10,6 @@ namespace BehaviourBranch.Logistics
         [SerializeField]
         private string[] branchJson = new string[10];
 
-        protected override void Start() { }
-
         protected void Update()
         {
             for (int cnt = 0; cnt < 10; cnt++)

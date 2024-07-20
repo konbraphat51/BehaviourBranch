@@ -50,7 +50,7 @@ namespace BehaviourBranch
         //node stopwatch
         public float stopwatch { get; private set; } = 0f;
 
-        private void Start()
+        private void Awake()
         {
             agentInterface = GetComponent<BehaviourBranchAgent>();
             PrepareConnection();
