@@ -1,6 +1,6 @@
-using AI.BehaviourBranch.Controls;
+using BehaviourBranch.Controls;
 
-namespace AI.BehaviourBranch
+namespace BehaviourBranch
 {
     public class NodeControl : Node
     {

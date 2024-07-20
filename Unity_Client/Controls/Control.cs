@@ -1,6 +1,6 @@
 using System;
 
-namespace AI.BehaviourBranch.Controls
+namespace BehaviourBranch.Controls
 {
     public abstract class Control
     {
@@ -28,7 +28,10 @@ namespace AI.BehaviourBranch.Controls
             }
         }
 
-        public abstract void ExecuteFirst(BehaviourBranchAI behaviourBranchAI);
-        public abstract void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI);
+        public abstract void ExecuteFirst(
+            BehaviourBranchController ai,
+            BehaviourBranchAgent agentInterface
+        );
+        public abstract void ExecuteUpdate(BehaviourBranchController behaviourBranchAI);
     }
 }

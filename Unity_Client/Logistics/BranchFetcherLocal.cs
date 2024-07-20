@@ -1,14 +1,15 @@
 using System;
+using BehaviourBranch.Logistics.PythonConnection;
 using UnityEngine;
-using Logistics.PythonConnection;
 using UnityEngine.Events;
 
-namespace AI.BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics
 {
     /// <summary>
     /// Connect with local Python and receive new BehaviourBranch
     /// </summary>
     [RequireComponent(typeof(PythonConnector))]
+    [RequireComponent(typeof(BranchDecoder))]
     public class BranchFetcherLocal : BranchFetcher
     {
         protected PythonConnector pythonConnector;
@@ -27,7 +28,12 @@ namespace AI.BehaviourBranch.Logistics
 
         public override void SendCommand(string command, int commandId = -1)
         {
-            Command instance = new Command() { command = command, commandId = commandId };
+            Command instance = new Command()
+            {
+                command = command,
+                commandId = commandId,
+                promptName = promptName
+            };
 
             pythonConnector.Send("command", instance);
         }
@@ -54,6 +60,7 @@ namespace AI.BehaviourBranch.Logistics
         {
             public string command;
             public int commandId = -1;
+            public string promptName = "";
         }
     }
 }

@@ -1,0 +1,3 @@
+*.meta
+Python_Server/BehaviourBranchAi.egg-info/*
+Python_Server/.vscode/settings.json

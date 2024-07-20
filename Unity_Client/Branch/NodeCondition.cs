@@ -1,7 +1,6 @@
-using AI.BehaviourBranch.Conditions;
-using Simulation.Objects.Fighters;
+using BehaviourBranch.Conditions;
 
-namespace AI.BehaviourBranch
+namespace BehaviourBranch
 {
     public class NodeCondition : Node
     {
@@ -35,13 +34,13 @@ namespace AI.BehaviourBranch
             return node;
         }
 
-        public bool Check(Fighter fighter)
+        public bool Check(BehaviourBranchAgent agentInterface)
         {
             //if this is the first time...
             if (condition == null)
             {
                 //...create new condition instance
-                condition = new Condition(fighter, this);
+                condition = new Condition(agentInterface, this);
             }
 
             //check condition

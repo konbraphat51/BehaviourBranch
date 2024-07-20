@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Logistics.PythonConnection;
+using BehaviourBranch.Logistics.PythonConnection;
 
-namespace AI.BehaviourBranch.Logistics
+namespace BehaviourBranch.Logistics
 {
     /// <summary>
     /// Connect with Python and receive new BehaviourBranch

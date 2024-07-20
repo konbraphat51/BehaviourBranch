@@ -1,0 +1,5 @@
+pyaudio
+pynput
+faster-whisper
+requests
+git+https://github.com/konbraphat51/UnityPythonConnectionModules.git#egg=UnityConnector&subdirectory=PythonSocket

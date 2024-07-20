@@ -1,0 +1,89 @@
+from BehaviourTree import add_action_behaviour, add_condition_behaviour, add_control_behaviour
+actions = [
+    "MoveX",  #横移動
+	"MoveY",  #縦移動
+    "GetNearFoodFood",  #近くの食べ物を取りに行く
+	"Stop",  #止まる
+]
+variables = [
+    "true",
+    "false",
+    "justGotFood"   #食べ物を取った   
+]
+conditions = [">", "<", "=="]
+controls = [
+    "Then", #その後に
+    "Repeat", #繰り返し
+    "QuitRepeating", #繰り返しをやめる
+]
+
+#上に3マス移動
+action0 = [
+    add_action_behaviour("MoveY", 3)
+]
+
+#左に2マス移動
+action1 = [
+    add_action_behaviour("MoveX", -2)
+]
+
+#右に1マス移動して下に4マス
+action2 = [
+    add_action_behaviour("MoveX", 1),
+    add_action_behaviour("MoveY", -4)
+]
+
+#近くの食べ物を取りに行って
+action3 = [
+    add_action_behaviour("GetNearFood"),
+]
+
+#突き当りまで左に移動してください
+action4 = [
+    add_action_behaviour("MoveX", -100),
+]
+
+#右に行ってリンゴとって
+action5 = [
+    add_action_behaviour("MoveX", 100),
+    #リンゴを取ったら、止まる
+	[
+		add_condition_behaviour("justGotFood", "==", "true"),
+		add_action_behaviour("Stop")
+	]
+]
+
+#左へリンゴを取りに行ったら上に4マス
+action6 = [
+    add_action_behaviour("MoveX", -100),
+    [
+        add_condition_behaviour("justGotFood", "==", "true"),
+        add_action_behaviour("MoveY", 4)
+    ]
+]
+
+#その後近くの食べ物を取って
+action7 = [
+    # その後
+	add_control_behaviour("Then"),
+
+	#近くの食べ物をとる
+	add_action_behaviour("justGotFood")
+]
+
+#近くのリンゴ2つとれ
+action8 = [
+    add_control_behaviour("Repeat", 2),
+
+    add_action_behaviour("GetNearFood")
+]
+
+#近くのリンゴ全部とってくれ
+action9 = [
+    add_control_behaviour("Repeat", -1),
+
+    add_action_behaviour("GetNearFood")
+]
+
+#[PROMPT]
+action10 = [

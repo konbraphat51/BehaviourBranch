@@ -1,6 +1,6 @@
-using AI.BehaviourBranch.Variables;
+using BehaviourBranch.Variables;
 
-namespace AI.BehaviourBranch.Controls
+namespace BehaviourBranch.Controls
 {
     public class Repeat : Control
     {
@@ -26,14 +26,16 @@ namespace AI.BehaviourBranch.Controls
             return false;
         }
 
-        public override void ExecuteFirst(BehaviourBranchAI behaviourBranchAI)
+        public override void ExecuteFirst(
+            BehaviourBranchController ai,
+            BehaviourBranchAgent agentInterface
+        )
         {
-            int repitition = (int)
-                Variable.ConvertVariable(nodeThis.args[0], behaviourBranchAI.fighterWatcher);
+            int repitition = (int)agentInterface.ConvertVariable(nodeThis.args[0]);
 
-            behaviourBranchAI.StartRepeating(nodeThis.nodeNext, repitition);
+            ai.StartRepeating(nodeThis.nodeNext, repitition);
         }
 
-        public override void ExecuteUpdate(BehaviourBranchAI behaviourBranchAI) { }
+        public override void ExecuteUpdate(BehaviourBranchController behaviourBranchAI) { }
     }
 }
